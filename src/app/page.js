@@ -1,8 +1,6 @@
 "use client";
 
-"use client";
-
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -11,24 +9,22 @@ import Portfolio from "../pages/Portfolio";
 import Contact from "../pages/Contact";
 import useIntersectionObserver from "../utils/useIntersectionObserver";
 import Footer from "../components/Footer";
-import Cursor from "../components/Cursor";
+import Cursor from "../components/cursor";
 import { Toaster } from "react-hot-toast";
 
 export default function Index() {
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.7,
+  };
+
   const sectionNames = ["home", "about", "skills", "portfolio", "contact"];
   const sectionRefs = sectionNames.map(() => useRef(null));
 
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.7,
-    };
-
-    sectionRefs.forEach((ref, index) => {
-      useIntersectionObserver(ref.current, sectionNames[index], options);
-    });
-  }, []);
+  sectionNames.forEach((name, index) => {
+    useIntersectionObserver(sectionRefs[index], name, options);
+  });
 
   return (
     <main className="w-screen h-screen">
