@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+"use client";
+
+import React, { useRef, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -13,18 +15,20 @@ import Cursor from "../components/Cursor";
 import { Toaster } from "react-hot-toast";
 
 export default function Index() {
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.7,
-  };
-
   const sectionNames = ["home", "about", "skills", "portfolio", "contact"];
   const sectionRefs = sectionNames.map(() => useRef(null));
 
-  sectionNames.forEach((name, index) => {
-    useIntersectionObserver(sectionRefs[index], name, options);
-  });
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.7,
+    };
+
+    sectionRefs.forEach((ref, index) => {
+      useIntersectionObserver(ref.current, sectionNames[index], options);
+    });
+  }, []);
 
   return (
     <main className="w-screen h-screen">
