@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ReactProvider from "@/store/redux-provider";
+import ReactProvider from "../store/redux-provider";
 import { Suspense } from "react";
 import Loading from "./loading";
 

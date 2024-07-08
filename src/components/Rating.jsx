@@ -4,8 +4,8 @@ import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { tranabout } from "@/utils/translateText";
-import { useSelector } from "react-redux";
+// import { tranabout } from "@/utils/translateText";
+// import { useSelector } from "react-redux";
 
 const skillLabels = {
   0.5: "Novice",

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
-import { RatingComponent, AboutSkill } from "@/components/Rating";
+import { RatingComponent, AboutSkill } from "../components/Rating";
 import "../styles/Hologram.css";
 
 const Skills = () => {

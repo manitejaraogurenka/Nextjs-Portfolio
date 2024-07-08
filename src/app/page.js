@@ -9,7 +9,7 @@ import Portfolio from "../pages/Portfolio";
 import Contact from "../pages/Contact";
 import useIntersectionObserver from "../utils/useIntersectionObserver";
 import Footer from "../components/Footer";
-import Cursor from "@/components/cursor";
+import Cursor from "../components/cursor";
 import { Toaster } from "react-hot-toast";
 
 export default function Index() {
